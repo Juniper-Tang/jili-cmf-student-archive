@@ -309,11 +309,39 @@ a { color: inherit; text-decoration: none; }
 
 .dashboard-panel {
   padding: 34px 48px;
+  border-bottom: 1px solid var(--border);
 }
 
 .dashboard-panel--side {
   border-left: 1px solid var(--border);
   background: var(--card-bg);
+}
+
+.dashboard-fold-section {
+  background: var(--panel-bg);
+}
+
+.dashboard-fold-section--last {
+  border-bottom: 0;
+}
+
+.dashboard-fold {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.dashboard-fold-summary {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.dashboard-fold[open] > .dashboard-fold-summary {
+  margin-bottom: 18px;
+}
+
+.dashboard-fold > .section-label {
+  margin-bottom: 12px;
 }
 
 .dashboard-title {
@@ -411,6 +439,7 @@ a { color: inherit; text-decoration: none; }
 
 .students-overview {
   padding: 34px 48px;
+  border-bottom: 1px solid var(--border);
 }
 
 .student-status-grid {
