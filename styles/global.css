@@ -391,7 +391,7 @@ a { color: inherit; text-decoration: none; }
 
 .activity-content {
   display: grid;
-  gap: 8px;
+  gap: 6px;
   min-width: 0;
 }
 
@@ -408,7 +408,6 @@ a { color: inherit; text-decoration: none; }
 
 .activity-meta {
   color: var(--text-muted);
-  font-style: normal;
   font-size: .76rem;
   line-height: 1.45;
 }
@@ -433,13 +432,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--text-muted);
   font-size: .74rem;
   text-align: right;
-  margin-top: -4px;
-}
-
-.activity-row small {
-  display: block;
-  color: var(--text-muted);
-  font-size: .78rem;
+  margin-top: -6px;
 }
 
 .pending-summary-card {
@@ -1355,7 +1348,7 @@ a { color: inherit; text-decoration: none; }
   }
 
   .activity-content {
-    gap: 7px;
+    gap: 6px;
   }
 
   .activity-meta {
@@ -1364,11 +1357,6 @@ a { color: inherit; text-decoration: none; }
 
   .activity-progress-line {
     font-size: .8rem;
-  }
-
-  .activity-row small {
-    font-size: .72rem;
-    line-height: 1.45;
   }
 
   .archive-nav {
