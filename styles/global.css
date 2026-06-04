@@ -1238,6 +1238,14 @@ a { color: inherit; text-decoration: none; }
   .metric-card:last-child {
     border-bottom: 0;
   }
+
+  .metric-card--mobile-hidden {
+    display: none;
+  }
+
+  .metric-card--green {
+    border-bottom: 0;
+  }
 }
 
 @media (max-width: 640px) {
