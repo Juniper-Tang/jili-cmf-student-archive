@@ -389,9 +389,52 @@ a { color: inherit; text-decoration: none; }
   font-size: .96rem;
 }
 
+.activity-content {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.activity-student-head,
+.activity-progress-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.activity-student-head em {
+  color: var(--text-muted);
+  font-style: normal;
+  font-size: .76rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.activity-progress-line {
+  color: var(--text-muted);
+  font-size: .84rem;
+}
+
+.activity-progress-line span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.activity-progress-line strong {
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.activity-progress-percent {
+  color: var(--text-muted);
+  font-size: .74rem;
+  text-align: right;
+  margin-top: -4px;
+}
+
 .activity-row small {
   display: block;
-  margin-top: 4px;
   color: var(--text-muted);
   font-size: .78rem;
 }
@@ -1293,6 +1336,41 @@ a { color: inherit; text-decoration: none; }
 
   .status-card-meta {
     display: none;
+  }
+
+  .activity-list {
+    gap: 0;
+  }
+
+  .activity-row {
+    gap: 11px;
+    padding: 14px 0;
+  }
+
+  .activity-dot {
+    margin-top: 7px;
+  }
+
+  .activity-content {
+    gap: 7px;
+  }
+
+  .activity-student-head {
+    align-items: flex-start;
+  }
+
+  .activity-student-head em {
+    font-size: .72rem;
+    white-space: normal;
+  }
+
+  .activity-progress-line {
+    font-size: .8rem;
+  }
+
+  .activity-row small {
+    font-size: .72rem;
+    line-height: 1.45;
   }
 
   .archive-nav {
