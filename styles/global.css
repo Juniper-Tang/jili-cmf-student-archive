@@ -395,7 +395,6 @@ a { color: inherit; text-decoration: none; }
   min-width: 0;
 }
 
-.activity-student-head,
 .activity-progress-line {
   display: flex;
   align-items: baseline;
@@ -403,12 +402,15 @@ a { color: inherit; text-decoration: none; }
   gap: 14px;
 }
 
-.activity-student-head em {
+.activity-student-head {
+  display: block;
+}
+
+.activity-meta {
   color: var(--text-muted);
   font-style: normal;
   font-size: .76rem;
-  text-align: right;
-  white-space: nowrap;
+  line-height: 1.45;
 }
 
 .activity-progress-line {
@@ -417,6 +419,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .activity-progress-line span {
+  flex: 1;
   min-width: 0;
   overflow-wrap: anywhere;
 }
@@ -1355,13 +1358,8 @@ a { color: inherit; text-decoration: none; }
     gap: 7px;
   }
 
-  .activity-student-head {
-    align-items: flex-start;
-  }
-
-  .activity-student-head em {
+  .activity-meta {
     font-size: .72rem;
-    white-space: normal;
   }
 
   .activity-progress-line {
