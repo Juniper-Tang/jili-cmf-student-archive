@@ -12,6 +12,26 @@
     window.alert(message);
   }
 
+  function markReady(target, url) {
+    target.setAttribute("href", url);
+    target.setAttribute("target", "_blank");
+    target.setAttribute("rel", "noopener noreferrer");
+    target.setAttribute("data-archive-signed-url-ready", "true");
+    target.classList.add("archive-access-ready");
+
+    const existing = target.querySelector("[data-archive-access-ready-label]");
+    if (existing) {
+      existing.textContent = "临时链接已生成，再次点击打开/下载";
+      return;
+    }
+
+    const label = document.createElement("span");
+    label.setAttribute("data-archive-access-ready-label", "true");
+    label.className = "archive-access-ready-label";
+    label.textContent = "临时链接已生成，再次点击打开/下载";
+    target.appendChild(label);
+  }
+
   async function openSignedUrl(target, assetId, action) {
     if (!config.endpoint || config.enabled !== true) {
       showMessage("外部访问服务还没有配置。当前只保留本地回看路径，部署后需要接入临时签名链接服务。");
@@ -31,7 +51,8 @@
       if (!payload || !payload.url) {
         throw new Error("missing url");
       }
-      window.open(payload.url, "_blank", "noopener,noreferrer");
+      markReady(target, payload.url);
+      showMessage("临时链接已生成。请再次点击这个文件卡片打开或下载。");
     } catch (error) {
       showMessage("临时链接生成失败，请稍后重试或联系管理员。");
     } finally {
@@ -45,6 +66,10 @@
 
     const action = target.getAttribute("data-archive-access-action") || "";
     const assetId = target.getAttribute("data-asset-id") || "";
+
+    if (target.getAttribute("data-archive-signed-url-ready") === "true" && target.getAttribute("href")) {
+      return;
+    }
 
     if (action === "show_record_only") {
       event.preventDefault();

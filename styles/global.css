@@ -970,6 +970,21 @@ a { color: inherit; text-decoration: none; }
   color: var(--text-muted);
 }
 
+.archive-access-ready {
+  border-color: var(--green);
+  background: #F4FBF7;
+}
+
+.archive-access-ready-label {
+  width: fit-content;
+  border-radius: 4px;
+  padding: 3px 7px;
+  background: #DCF7EA;
+  color: var(--green);
+  font-size: .68rem;
+  font-weight: 700;
+}
+
 .file-name {
   min-width: 0;
   overflow-wrap: anywhere;
