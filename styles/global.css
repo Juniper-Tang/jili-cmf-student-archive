@@ -734,6 +734,47 @@ button { font-family: inherit; cursor: pointer; }
 }
 .det-tl-meta-item strong { color: var(--text); font-weight: 600; }
 
+/* Folded per-node details */
+.det-node-extra {
+  margin-top: 10px;
+  border-top: 1px solid var(--hairline);
+}
+
+.det-node-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  list-style: none;
+  cursor: pointer;
+  padding: 9px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.det-node-summary::-webkit-details-marker { display: none; }
+.det-node-summary::before {
+  content: "▸";
+  color: var(--faint);
+  font-size: 10px;
+  flex-shrink: 0;
+}
+.det-node-extra[open] > .det-node-summary::before { content: "▾"; }
+.det-node-summary span {
+  flex: 1;
+  min-width: 0;
+}
+.det-node-summary strong {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--faint);
+  font-weight: 400;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.det-node-extra-body {
+  padding: 2px 0 4px;
+}
+
 /* File lists */
 .det-file-list {
   margin-top: 12px;
@@ -902,9 +943,7 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .idx-col-id {
-    grid-row: 2;
-    grid-column: 1;
-    font-size: 11px;
+    display: none;
   }
 
   .idx-col-name {
@@ -917,6 +956,8 @@ button { font-family: inherit; cursor: pointer; }
     grid-row: 2;
     grid-column: 1;
     font-size: 11px;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   .idx-col-status {
